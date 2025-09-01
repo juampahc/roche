@@ -1,0 +1,5 @@
+FROM ccr-2vdh3abv-pub.cnc.bj.baidubce.com/paddlex/hps:paddlex3.0.0-cpu
+
+COPY /paddlex_hps_formula_recognition_sdk/server/ /app/
+WORKDIR /app/
+CMD ["/bin/bash", "server.sh"]

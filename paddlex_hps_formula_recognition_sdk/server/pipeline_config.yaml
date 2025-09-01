@@ -1,0 +1,21 @@
+pipeline_name: formula_recognition
+
+use_layout_detection: True
+use_doc_preprocessor: False
+
+SubModules:
+  LayoutDetection:
+    module_name: layout_detection
+    model_name: PP-DocLayout_plus-L
+    model_dir: null
+    threshold: 0.5
+    layout_nms: False
+    layout_unclip_ratio: 1.0
+    layout_merge_bboxes_mode: "large"
+    batch_size: 12
+
+  FormulaRecognition:
+    module_name: formula_recognition
+    model_name: PP-FormulaNet_plus-S
+    model_dir: null
+    batch_size: 12
